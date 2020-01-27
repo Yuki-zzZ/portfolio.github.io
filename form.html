@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yuki's portfolio contact form</title>
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="contact-form">
+        <div class="nav row">
+            <div class="nav-drawer col-1 display-4">
+                <input id="nav-input" type="checkbox" class="nav-unshown">
+                <label id="nav-open" for="nav-input"><span></span></label>
+                <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                <div id="nav-content">
+                    <a class="btn" href="./portfolio.html">Home</a><br>
+                    <a class="btn" href="./portfolio.html#about">About</a><br>
+                    <a class="btn" href="./portfolio.html#skills">Skills</a><br>
+                    <a class="btn" href="./portfolio.html#works">Works</a><br>
+                    <a class="btn" href="./portfolio.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <form name="form">
+            <div class="row">
+                <div class="container offset-1 col-10">
+                    <div class="row">
+                        <div class="title offset-md-4 col-md-4">
+                            <h1>Contact</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="contact-info offset-md-3 col-md-6">
+                            <lable>First Name </lable><input class="input-contents" type="text"><br>
+                            <lable>Last Name </lable><input class="input-contents" type="text"><br>
+                            <lable>E-mail address </lable><input class="input-contents" type="email" name="email"><br>
+                            <lable>Phone Number </lable><input class="input-contents" type="tel" placeholder="000-123-4567" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="textarea offset-md-3 col-md-6">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+        </form>
+                <div class="row">
+                    <div class="contact-submit offset-md-2 col-md-8">
+                        <input class="btn message" type="submit" value="submit" onclick="form1()">
+                        <input class="btn message" type="reset" value="reset" onclick="form2()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function form1() {
+	document.form.action="yuki.tennis2588@icloud.com";
+	document.form.method="get";
+	document.form.submit();
+}
+
+function form2() {
+	document.form.reset();
+}
+</script>
+</html>
