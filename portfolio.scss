@@ -1,0 +1,373 @@
+.button:hover{
+    opacity: 0.6;
+}
+.button{
+    color: black;
+}
+.works-image:hover{
+    opacity: 0.7;
+}
+@mixin white-backImage{
+    background-image: url(../images/white-unsplash-.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+}
+// ==========================================================
+// top-container
+// ==========================================================
+
+.background-image{
+    background-image: url(../images/typingLaptop.jpg);
+    background-size: cover;
+    opacity: 0.7;
+}
+.title{
+    height: 600px;
+    letter-spacing: 15px;
+    margin-left: 40px;
+    h1{
+        line-height: 600px;
+    }
+}
+// nav-bar
+.nav{
+    position: fixed;
+    z-index: 99;
+}
+.nav-drawer {
+    margin-left: 30px;
+    position: relative;
+  }
+  
+  /*チェックボックス等は非表示に*/
+  .nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーアイコンをCSSだけで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 5px;/*線の太さ*/
+    width: 40px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒カバー*/
+  #nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 999;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 220px;/*最大幅（調整してください）*/
+    height: 100%;
+    background-color: rgb(144, 220, 250);/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+    .btn{
+        font-size: 20px;
+        margin-top: 20px;
+        width: 100px;
+        background-color: rgb(170, 227, 250);
+        z-index: 9999;
+    }
+  }
+  
+  /*チェックが入ったらもろもろ表示*/
+  #nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+.button-bar{
+    line-height: 150px;
+    text-align: center;
+    font-size: 25px;
+    height: 200px;
+    margin-top: 30px;
+    a{
+        padding: 10px;
+    }
+}
+.button-sns{
+    margin-top: 30px;
+    line-height: 170px;
+    text-align: center;
+    a{
+        padding: 10px;
+    }
+}
+
+@media (max-width: 670px){
+    .button-bar{
+        height: 50px;
+    }
+}
+@media (max-width: 991px){
+    .title{
+        
+    }
+}
+// ==========================================================
+// About
+// ==========================================================
+#about{
+    @include white-backImage;
+}
+.about-image{
+    border-left: 3px solid rgb(51, 51, 51);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    img{
+        width: 400px;
+        height: 300px;
+        margin: 50px;
+        border-radius: 10px;
+        box-shadow: 7px 7px black;
+    }
+}
+.about-title{
+    h1{
+        line-height: 500px;
+    }
+}
+.about-info{
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 767px){
+    .about-title{
+        h1{
+            line-height: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+    }
+    .about-info{
+        margin: 30px;
+    }
+}
+@media (max-width: 991px){
+    .about-title{
+        margin-left: 50px;
+    }
+}
+// ==========================================================
+// skills
+// ==========================================================
+#skills{
+    @include white-backImage;
+}
+.skills-title{
+    margin-top: 100px;
+    text-align: right;
+    border-bottom: 3px solid black;
+}
+.tags{
+    width: 220px;
+    height: 400px;
+    background-color: rgba(128, 128, 128,0.5);
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    ul{
+        list-style: none;
+    }
+}
+.logo-image{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.skills-explain{
+    margin-top: 20px;
+}
+.text{
+    display: inline-block;
+    width: 80%;
+    height: 150px;
+    overflow: scroll;
+    margin-top: 20px;
+    font-size: 12px;
+    color: black;
+    word-break: break-word;
+}
+
+@media (max-width: 670px){
+    .skills-title{
+        text-align: center;
+    }
+    .tags{
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .logo-image{
+        width: 100px;
+        height: 100px;
+        margin-top: 30px;
+        margin-left: 60px;
+    }
+    .skills-explain{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}
+@media (max-width: 991px){
+    .skills-title{
+        text-align: center;
+    }
+    .tags{
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .logo-image{
+        width: 100px;
+        height: 100px;
+        margin-top: 30px;
+        margin-left: 60px;
+    }
+    .skills-explain{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}
+// ==========================================================
+// works
+// ==========================================================
+#works{
+    @include white-backImage;
+}
+.works-title{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-bottom: 3px solid black;
+}
+.work{
+    margin-bottom: 30px;
+}
+.work-box{
+    background-color: grey;
+    width: 220px;
+    height: 200px;
+    opacity: 0.8;
+}
+.works-image{
+    width: 220px;
+    height: 180px;
+    margin-top: 10px;
+}
+
+@media (max-width: 991px){
+    .works-title{
+        text-align: center;
+    }
+    .work-box{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .works-image{
+        width: 300px;
+    }
+}
+@media (max-width: 670px){
+    .works-title{
+        text-align: center;
+    }
+    .work-box{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .works-image{
+        width: 300px;
+    }
+}
+// ==========================================================
+// contact
+// ==========================================================
+#contact{
+    @include white-backImage;
+}
+.footer{
+    background-color: rgba(0, 0, 0,0.85);
+    height: 500px;
+    margin-top: 200px;
+}
+.contact-title{
+    color: white;
+    margin-top: 30px;
+    text-align: right;
+    border-bottom: 3px solid white; 
+}
+.contact-explain{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+.contact-link{
+    margin-top: 100px;
+    margin-left: 50px;
+    border-bottom: 3px solid white;
+    a{
+        padding: 10px;
+    }
+}
+.contact-logo{
+    color :white;
+}
+@media (max-width: 670px){
+    .footer{
+        height: 600px;
+    }
+    .contact-title{
+        text-align: center;
+        margin-left: 80px;
+    }
+}
